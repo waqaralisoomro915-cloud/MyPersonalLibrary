@@ -1,0 +1,471 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block body %}
+    <!-- ==================== NEW ARRIVALS HEADER ==================== -->
+    <section class="page-header">
+        <link rel="stylesheet" href="{% static 'arivals.css' %}">
+        <div class="container">
+            <h1 class="page-title">New Arrivals</h1>
+
+            <p class="page-description">Discover the latest additions to our library collection. Fresh books added this month!</p>
+        </div>
+    </section>
+
+    <!-- ==================== FILTER SECTION ==================== -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-wrapper">
+                <div class="filter-group">
+                    <label for="category-filter"><i class="fas fa-filter"></i> Filter by:</label>
+                    <select id="category-filter" class="filter-select">
+                        <option value="all">All Categories</option>
+                        <option value="fiction">Fiction</option>
+                        <option value="non-fiction">Non-Fiction</option>
+                        <option value="mystery">Mystery & Thriller</option>
+                        <option value="sci-fi">Science Fiction</option>
+                        <option value="romance">Romance</option>
+                        <option value="biography">Biography</option>
+                        <option value="history">History</option>
+                        <option value="children">Children's Books</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="sort-by"><i class="fas fa-sort-amount-down"></i> Sort by:</label>
+                    <select id="sort-by" class="filter-select">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="title-asc">Title A-Z</option>
+                        <option value="title-desc">Title Z-A</option>
+                        <option value="rating">Highest Rated</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="date-range"><i class="fas fa-calendar"></i> Added in:</label>
+                    <select id="date-range" class="filter-select">
+                        <option value="this-week">This Week</option>
+                        <option value="this-month" selected>This Month</option>
+                        <option value="last-3-months">Last 3 Months</option>
+                        <option value="this-year">This Year</option>
+                    </select>
+                </div>
+
+                <div class="view-toggle">
+                    <button class="view-btn active" id="grid-view"><i class="fas fa-th-large"></i></button>
+                    <button class="view-btn" id="list-view"><i class="fas fa-list"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== NEW ARRIVALS STATS ==================== -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-book"></i>
+                    <div class="stat-info">
+                        <span class="stat-number">48</span>
+                        <span class="stat-label">New Books</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-info">
+                        <span class="stat-number">12</span>
+                        <span class="stat-label">New Authors</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-tags"></i>
+                    <div class="stat-info">
+                        <span class="stat-number">15</span>
+                        <span class="stat-label">Categories</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-clock"></i>
+                    <div class="stat-info">
+                        <span class="stat-number">30</span>
+                        <span class="stat-label">Days</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== NEW ARRIVALS GRID ==================== -->
+    <section class="new-arrivals-section">
+        <div class="container">
+            <!-- Featured New Arrival -->
+             {% for book in new_books %}
+            <div class="featured-new">
+                <div class="featured-badge">
+                    <i class="fas fa-crown"></i> Featured New Arrival
+                </div>
+                <div class="featured-content">
+                    <div class="featured-image">
+                        <img src="{{ book.image }}" alt="Featured Book">
+                        <span class="new-badge-large">NEW</span>
+                    </div>
+                    <div class="featured-details">
+                        <div class="featured-meta">
+                            <span class="featured-category">Science Fiction</span>
+                            <span class="featured-date"><i class="fas fa-calendar-alt"></i> Added 2 days ago</span>
+                        </div>
+                        <h2 class="featured-title">{{ book.title }}</h2>
+                        <p class="featured-author">by {{ book.author }}</p>
+                        <div class="featured-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.7/5 from 28 reviews)</span>
+                        </div>
+                        <p class="feature-description">{{ book.description }}</p>
+                        <div class="featured-highlights">
+                            <div class="highlight"><i class="fas fa-trophy"></i> #1 Bestseller</div>
+                            <div class="highlight"><i class="fas fa-star"></i> Editor's Choice</div>
+                            <div class="highlight"><i class="fas fa-fire"></i> Trending Now</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+            <div class="featured-new">
+                <div class="featured-badge">
+                    <i class="fas fa-crown"></i> Featured New Arrival
+                </div>
+                <div class="featured-content">
+                    <div class="featured-image">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThKN5znx1kYaFSWfnQeSNBL9wz0xtr0SSTRA&s" alt="Featured Book">
+                        <span class="new-badge-large">NEW</span>
+                    </div>
+                    <div class="featured-details">
+                        <div class="featured-meta">
+                            <span class="featured-category">Science Fiction</span>
+                            <span class="featured-date"><i class="fas fa-calendar-alt"></i> Added 2 days ago</span>
+                        </div>
+                        <h2 class="featured-title">The Lost Chronicles of Aurora</h2>
+                        <p class="featured-author">by Sarah J. Thompson</p>
+                        <div class="featured-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.7/5 from 28 reviews)</span>
+                        </div>
+                        <p class="featured-description">
+                            In a world where magic meets technology, a young woman discovers she holds the key to saving her civilization from destruction. This epic tale weaves together adventure, romance, and mystery in a way that will keep you turning pages late into the night.
+                        </p>
+                        <div class="featured-highlights">
+                            <div class="highlight"><i class="fas fa-trophy"></i> #1 Bestseller</div>
+                            <div class="highlight"><i class="fas fa-star"></i> Editor's Choice</div>
+                            <div class="highlight"><i class="fas fa-fire"></i> Trending Now</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section Title -->
+            <div class="section-header">
+                <h2 class="section-subtitle">This Week's New Arrivals</h2>
+                <a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Books Grid -->
+            <div class="books-grid" id="booksGrid">
+                <!-- Book Card 1 -->
+                <div class="book-card new">
+                    <div class="book-badge">NEW</div>
+                    <div class="book-cover">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSzVH23lOQaHCnoCmu1rgE0_sleiFHzYqIJA&s" alt="Book Cover">
+
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">The Midnight Library</h3>
+                        <p class="book-author">Matt Haig</p>
+                        <div class="book-meta">
+                            <span class="book-category">Fiction</span>
+                            <span class="book-date"><i class="fas fa-calendar"></i> 2 days ago</span>
+                        </div>
+                        <div class="book-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.5)</span>
+                        </div>
+                        <p class="book-description">Between life and death there is a library, and within that library, the shelves go on forever.</p>
+                    </div>
+                </div>
+
+                <!-- Book Card 2 -->
+                <div class="book-card new">
+                    <div class="book-badge">NEW</div>
+                    <div class="book-cover">
+                        <img src="https://www.harryhartog.com.au/cdn/shop/products/9781529157468.jpg?v=1665002827&width=480" alt="Book Cover">
+                        <div class="book-overlay">
+                            <button class="btn-quickview"><i class="fas fa-eye"></i> Quick View</button>
+                        </div>
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">Project Hail Mary</h3>
+                        <p class="book-author">Andy Weir</p>
+                        <div class="book-meta">
+                            <span class="book-category">Sci-Fi</span>
+                            <span class="book-date"><i class="fas fa-calendar"></i> 3 days ago</span>
+                        </div>
+                        <div class="book-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                        <p class="book-description">A lone astronaut must save humanity from extinction, but he can't remember his own name.</p>
+
+                    </div>
+                </div>
+
+                <!-- Book Card 3 -->
+                <div class="book-card new">
+                    <div class="book-badge">NEW</div>
+                    <div class="book-cover">
+                        <img src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781668081785/the-seven-husbands-of-evelyn-hugo-deluxe-edition-hardcover-9781668081785_hr.jpg" alt="Book Cover">
+                        <div class="book-overlay">
+                            <button class="btn-quickview"><i class="fas fa-eye"></i> Quick View</button>
+                        </div>
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">The Seven Husbands of Evelyn Hugo</h3>
+                        <p class="book-author">Taylor Jenkins Reid</p>
+                        <div class="book-meta">
+                            <span class="book-category">Historical Fiction</span>
+                            <span class="book-date"><i class="fas fa-calendar"></i> 4 days ago</span>
+                        </div>
+                        <div class="book-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.8)</span>
+                        </div>
+                        <p class="book-description">Aging Hollywood icon Evelyn Hugo reveals the truth about her glamorous and scandalous life.</p>
+
+                    </div>
+                </div>
+
+                <!-- Book Card 4 -->
+                <div class="book-card new">
+                    <div class="book-badge">NEW</div>
+                    <div class="book-cover">
+                        <img src="https://static-01.daraz.pk/p/6c047f3545bce96bffc4277def796303.jpg" alt="Book Cover">
+
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">Atomic Habits</h3>
+                        <p class="book-author">James Clear</p>
+                        <div class="book-meta">
+                            <span class="book-category">Self-Help</span>
+                            <span class="book-date"><i class="fas fa-calendar"></i> 5 days ago</span>
+                        </div>
+                        <div class="book-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                        <p class="book-description">Tiny changes, remarkable results. The #1 New York Times bestseller.</p>
+                    </div>
+                </div>
+
+                <!-- Book Card 5 -->
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/3/3a/The_Thursday_Murder_Club.jpg" alt="Book Cover">
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">The Thursday Murder Club</h3>
+                        <p class="book-author">Richard Osman</p>
+                        <div class="book-meta">
+                            <span class="book-category">Mystery</span>
+                            <span class="book-date"><i class="fas fa-calendar"></i> 6 days ago</span>
+                        </div>
+                        <div class="book-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.6)</span>
+                        </div>
+                        <p class="book-description">Four unlikely friends meet weekly to solve cold cases in their retirement village.</p>
+
+                    </div>
+                </div>
+
+                <!-- Book Card 6 -->
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="https://bookabook.pk/cdn/shop/products/51467369._SY475.jpg?v=1646758755" alt="Book Cover">
+
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">The Vanishing Half</h3>
+                        <p class="book-author">Brit Bennett</p>
+                        <div class="book-meta">
+                            <span class="book-category">Literary Fiction</span>
+                            <span class="book-date"><i class="fas fa-calendar"></i> 1 week ago</span>
+                        </div>
+                        <div class="book-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                        <p class="book-description">The Vignes twin sisters will always be identical. But after growing up together, they choose to live in two very different worlds.</p>
+
+                    </div>
+                </div>
+
+                <!-- Book Card 7 -->
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="https://www.denofgeek.com/wp-content/uploads/2020/09/addie-larue-rengin-turner.jpg?w=707" alt="Book Cover">
+
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">The Invisible Life of Addie LaRue</h3>
+                        <p class="book-author">V.E. Schwab</p>
+                        <div class="book-meta">
+                            <span class="book-category">Fantasy</span>
+                            <span class="book-date"><i class="fas fa-calendar"></i> 1 week ago</span>
+                        </div>
+                        <div class="book-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(4.7)</span>
+                        </div>
+                        <p class="book-description">A woman makes a Faustian bargain to live forever but is cursed to be forgotten by everyone she meets.</p>
+
+                    </div>
+                </div>
+
+                <!-- Book Card 8 -->
+                <div class="book-card">
+                    <div class="book-cover">
+                        <img src="https://www.books4people.co.uk/cdn/shop/products/KlaraandTheSun_grande.jpg?v=1623322050" alt="Book Cover">
+
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">Klara and the Sun</h3>
+                        <p class="book-author">Kazuo Ishiguro</p>
+                        <div class="book-meta">
+                            <span class="book-category">Science Fiction</span>
+                            <span class="book-date"><i class="fas fa-calendar"></i> 1 week ago</span>
+                        </div>
+                        <div class="book-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(5.0)</span>
+                        </div>
+                        <p class="book-description">From the Nobel Prize-winning author, a story of love and the human heart through the eyes of an Artificial Friend.</p>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- ==================== CATEGORIES SPOTLIGHT ==================== -->
+    <section class="categories-spotlight">
+        <div class="container">
+            <h2 class="section-subtitle">New Arrivals by Category</h2>
+            <div class="category-spotlight-grid">
+                <div class="spotlight-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>Science Fiction</h3>
+                    <p>12 new books</p>
+                    <a href="#" class="spotlight-link">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="spotlight-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>Romance</h3>
+                    <p>8 new books</p>
+                    <a href="#" class="spotlight-link">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="spotlight-card">
+                    <i class="fas fa-skull"></i>
+                    <h3>Mystery</h3>
+                    <p>10 new books</p>
+                    <a href="#" class="spotlight-link">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="spotlight-card">
+                    <i class="fas fa-flask"></i>
+                    <h3>Science</h3>
+                    <p>5 new books</p>
+                    <a href="#" class="spotlight-link">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== REQUEST NEW BOOKS ==================== -->
+    <section class="request-section">
+        <div class="container">
+            <div class="request-content">
+                <h2>Didn't find what you're looking for?</h2>
+                <p>Request a new book and we'll try to add it to our collection</p>
+                <form class="request-form" method="post">
+                    {% csrf_token %}
+                    <input type="text" name="title" placeholder="Enter book title " required>
+                    <input type="text" name="author" placeholder="Enter Author name " required>
+                    <button type="submit">Request Book</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Simple JavaScript for view toggle (grid/list)
+        document.getElementById('grid-view').addEventListener('click', function() {
+            document.getElementById('booksGrid').classList.remove('list-view');
+            document.getElementById('grid-view').classList.add('active');
+            document.getElementById('list-view').classList.remove('active');
+        });
+
+        document.getElementById('list-view').addEventListener('click', function() {
+            document.getElementById('booksGrid').classList.add('list-view');
+            document.getElementById('list-view').classList.add('active');
+            document.getElementById('grid-view').classList.remove('active');
+        });
+
+        // Filter functionality (just for demo)
+        document.querySelectorAll('.filter-select').forEach(select => {
+            select.addEventListener('change', function() {
+                alert('Filter functionality would filter books here. This is a demo.');
+            });
+        });
+    </script>
+    {% endblock body %}

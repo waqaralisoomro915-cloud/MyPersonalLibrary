@@ -1,0 +1,217 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+    <!-- Categories Section -->
+    <section id="categories" class="categories">
+        <link rel="stylesheet" href="{% static 'home.css' %}">
+        <h2 class="section-title"> Unlock a world of stories, knowledge, and imagination through our book categories</h2>
+        <div class="categories-grid">
+            <div class="category-card">
+                <i class="fas fa-robot"></i>
+                <h3>Science Fiction</h3>
+                <p>45 books</p>
+            </div>
+            <div class="category-card">
+                <i class="fas fa-heart"></i>
+                <h3>Romance</h3>
+                <p>32 books</p>
+            </div>
+            <div class="category-card">
+                <i class="fas fa-skull"></i>
+                <h3>Mystery</h3>
+                <p>28 books</p>
+            </div>
+            <div class="category-card">
+                <i class="fas fa-flask"></i>
+                <h3>Science</h3>
+                <p>23 books</p>
+            </div>
+            <div class="category-card">
+                <i class="fas fa-landmark"></i>
+                <h3>History</h3>
+                <p>31 books</p>
+            </div>
+            <div class="category-card">
+                <i class="fas fa-child"></i>
+                <h3>Children's</h3>
+                <p>19 books</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Books Section -->
+    <section id="books" class="featured-books">
+        <h2 class="section-title"> My Favourite Books</h2>
+        <div class="books-grid">
+            <div class="book-card">
+                <div class="book-cover">
+                    <img src="https://theliterarylifestyle.com/wp-content/uploads/2024/02/the-silent-patient.jpg" alt="Book Cover">
+                    <div class="book-overlay">
+                        <button class="btn-favorite"><i class="fas fa-heart"></i></button>
+                        <button class="btn-read"><i class="fas fa-book-open"></i> Read</button>
+                    </div>
+                </div>
+                <div class="book-info">
+                    <h3>The Silent Patient</h3>
+                    <p class="author">Alex Michaelides</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="book-description">A woman's act of violence against her husband...</p>
+                </div>
+            </div>
+
+            <div class="book-card">
+                <div class="book-cover">
+                    <img src="https://www.abramsbooks.com/cover_images/1/9781419731501_s3.jpg" alt="Book Cover">
+                    <div class="book-overlay">
+                        <button class="btn-favorite"><i class="fas fa-heart"></i></button>
+                        <button class="btn-read"><i class="fas fa-book-open"></i> Read</button>
+                    </div>
+                </div>
+                <div class="book-info">
+                    <h3>Dune</h3>
+                    <p class="author">Frank Herbert</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="book-description">A mythic and emotionally charged hero's journey...</p>
+                </div>
+            </div>
+
+            <div class="book-card">
+                <div class="book-cover">
+                    <img src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1528206996i/38746485.jpg" alt="Book Cover">
+                    <div class="book-overlay">
+                        <button class="btn-favorite"><i class="fas fa-heart"></i></button>
+                        <button class="btn-read"><i class="fas fa-book-open"></i> Read</button>
+                    </div>
+                </div>
+                <div class="book-info">
+                    <h3>Becoming</h3>
+                    <p class="author">Michelle Obama</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="book-description">An intimate, powerful, and inspiring memoir...</p>
+                </div>
+            </div>
+
+            <div class="book-card">
+                <div class="book-cover">
+                    <img src="https://readings-storage.s3.ap-south-1.amazonaws.com/images/9780593135204.webp" alt="Book Cover">
+                    <div class="book-overlay">
+                        <button class="btn-favorite"><i class="fas fa-heart"></i></button>
+                        <button class="btn-read"><i class="fas fa-book-open"></i> Read</button>
+                    </div>
+                </div>
+                <div class="book-info">
+                    <h3>Project Hail Mary</h3>
+                    <p class="author">Andy Weir</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="book-description">A lone astronaut must save humanity from extinction...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Currently Reading Section -->
+    <section class="currently-reading">
+        <h2 class="section-title">Currently Reading</h2>
+        <div class="reading-list">
+            <div class="reading-item">
+                <img src="https://i0.wp.com/kitabee.pk/wp-content/uploads/2021/07/IMG_7824-2.jpeg?fit=330%2C500&ssl=1" alt="Book">
+                <div class="reading-info">
+                    <h3>The Midnight Library</h3>
+                    <p>Matt Haig</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 65%"></div>
+                    </div>
+                    <span class="progress-text">65% completed</span>
+                </div>
+            </div>
+            <div class="reading-item">
+                <img src="https://onlinebooksoutlet.com/cdn/shop/files/atomic-habits-book-james-clear-pakistan.webp?v=1749047064" alt="Book">
+                <div class="reading-info">
+                    <h3>Atomic Habits</h3>
+                    <p>James Clear</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 30%"></div>
+                    </div>
+                    <span class="progress-text">30% completed</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Favorites Section -->
+    <section id="favorites" class="favorites">
+        <h2 class="section-title">My Favorite Books</h2>
+        <div class="favorites-grid">
+            <div class="favorite-card">
+                <i class="fas fa-crown favorite-icon"></i>
+                <img src="https://www.varietystationers.pk/cdn/shop/files/58fe6873cccf02925996d7df87f94cf7.jpg?v=1706365978" alt="Favorite">
+                <h3>1984</h3>
+                <p>George Orwell</p>
+            </div>
+            <div class="favorite-card">
+                <i class="fas fa-medal favorite-icon"></i>
+                <img src="https://i0.wp.com/www.mindfulmuslimreader.com/wp-content/uploads/2022/10/mockingbird-e1666245397419.webp?w=800&ssl=1" alt="Favorite">
+                <h3>To Kill a Mockingbird</h3>
+                <p>Harper Lee</p>
+            </div>
+            <div class="favorite-card">
+                <i class="fas fa-medal favorite-icon"></i>
+                <img src="https://m.media-amazon.com/images/I/71V1cA2fiZL._AC_UF1000,1000_QL80_.jpg" alt="Favorite">
+                <h3>The Great Gatsby</h3>
+                <p>F. Scott Fitzgerald</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-container">
+            <div class="about-content">
+                <h2>About My Library</h2>
+                <p>Welcome to my personal digital library! This is where I keep track of all the books I've read, am currently reading, and want to read in the future. Each book here has a special place in my journey as a reader.</p>
+                <div class="about-features">
+                    <div class="feature">
+                        <i class="fas fa-bookmark"></i>
+                        <span>Personal notes on every book</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-star"></i>
+                        <span>Custom rating system</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-tags"></i>
+                        <span>Organized by genres and themes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+{% endblock body %}

@@ -1,0 +1,290 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<!-- ==================== PAGE HEADER ==================== -->
+<section class="page-header">
+    <link rel="stylesheet" href="{% static 'contact.css'%}">
+    <div class="container">
+        <h1 class="page-title">Contact Us</h1>
+        <p class="page-description">We'd love to hear from you! Send us a message and we'll respond as soon as possible.</p>
+    </div>
+</section>
+
+<!-- ==================== CONTACT INFO SECTION ==================== -->
+<section class="contact-info-section">
+    <div class="container">
+        <div class="contact-info-grid">
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>Visit Us</h3>
+                <p>123 Library Street<br>Dadu City, opposit ssp house dadu<br>Dadu, Sindh, Pakistan</p>
+                <a href="https://maps.app.goo.gl/8QN1ZYzpDPeQ6bQb9" class="info-link">Get Directions <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <h3>Call Us</h3>
+                <p>Main: +92 3147152961 <br>Support: +92 311 3525060 <br>+92 311 3525060</p>
+                <a href="tel:+923147152961" class="info-link">Call Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>Email Us</h3>
+                <p>General: iilibrary@gmail.com<br>Support: supportiiqazi@mylibrary.com<br>Careers: iijobs@mylibrary.com</p>
+                <a href="mailto:info@mylibrary.com" class="info-link">Send Email <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="info-card">
+                <div class="info-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <h3>Library Hours</h3>
+                <p>Mon-Fri: 9:00 AM - 8:00 PM<br>Saturday: 10:00 AM - 6:00 PM<br>Sunday: 12:00 PM - 5:00 PM</p>
+                <a href="#" class="info-link">View Holiday Hours <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== CONTACT FORM SECTION ==================== -->
+<section class="contact-form-section">
+    <div class="container">
+        <div class="contact-form-wrapper">
+            <div class="form-header">
+                <h2 class="form-title">Send Us a Message</h2>
+                <p class="form-subtitle">We'll get back to you within 24-48 hours</p>
+            </div>
+
+            <form method="POST" action="{% url 'contact' %}" id="contactForm">
+                {% csrf_token %}
+                <!-- Name Field -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name <span class="required">*</span></label>
+                        <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name <span class="required">*</span></label>
+                        <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required>
+                    </div>
+                </div>
+
+                <!-- Email Field -->
+                <div class="form-group">
+                    <label for="email">Email Address <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="youremail@example.com" required>
+                </div>
+
+                <!-- Phone Field -->
+                <div class="form-group">
+                    <label for="phone">Phone Number <span class="optional">(optional)</span></label>
+                    <input type="tel" id="phone" name="phone" placeholder="+1 (234) 567-890">
+                </div>
+
+                <!-- Subject Field -->
+                <div class="form-group">
+                    <label for="subject">Subject <span class="required">*</span></label>
+                    <select id="subject" name="subject" required>
+                        <option value="" disabled selected>Select a subject</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="membership">Membership Questions</option>
+                        <option value="books">Book Suggestions</option>
+                        <option value="events">Library Events</option>
+                        <option value="donations">Donations</option>
+                        <option value="technical">Technical Support</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <!-- Message Field -->
+                <div class="form-group">
+                    <label for="message">Message <span class="required">*</span></label>
+                    <textarea id="message" name="message" rows="6" placeholder="Type your message here..." required></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                    <button type="reset" class="reset-btn">
+                        <i class="fas fa-redo"></i> Reset
+                    </button>
+                </div>
+
+                <!-- Form Status Message (hidden by default) -->
+                <div class="form-message success-message" id="successMessage" style="display: none;">
+                    <i class="fas fa-check-circle"></i>
+                    Thank you! Your message has been sent successfully.
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== MAP SECTION ==================== -->
+<section class="map-section">
+    <div class="container">
+        <div class="map-container">
+            <iframe
+                src="https://www.bing.com/maps?cp=26.734058%7E67.779482&lvl=12&style=r"
+                allowfullscreen=""
+                loading="lazy">
+            </iframe>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== FAQ SECTION ==================== -->
+<section class="faq-section">
+    <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How long does it take to get a response?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p> I typically respond to all inquiries within 24-48 hours during business days. For urgent matters, I recommend calling me directly.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Can I suggest a book for the library?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely! I love hearing book suggestions from you. Please use the contact form and select "Book Suggestions" as the subject.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How do I become a member?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Membership is free and easy! You can sign up online through our website or visit us in person with a valid ID.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Do you host events?</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>No! personally I don't host book clubs But sometimes people invite me to host their book clubs, author readings, and children's story time. Check my Events page for upcoming activities.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== SOCIAL CONNECT SECTION ==================== -->
+<section class="social-connect-section">
+    <div class="container">
+        <div class="social-connect-wrapper">
+            <h2>Connect With me</h2>
+            <p>Follow me on social media for updates, events, and book recommendations,</p>
+            <div class="social-links-large">
+                <a href="#" class="social-link-large facebook">
+                    <i class="fab fa-facebook-f"></i>
+                    <span>Facebook</span>
+                </a>
+                <a href="#" class="social-link-large twitter">
+                    <i class="fab fa-twitter"></i>
+                    <span>Twitter</span>
+                </a>
+                <a href="#" class="social-link-large instagram">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+                <a href="#" class="social-link-large goodreads">
+                    <i class="fab fa-goodreads-g"></i>
+                    <span>Goodreads</span>
+                </a>
+                <a href="#" class="social-link-large youtube">
+                    <i class="fab fa-youtube"></i>
+                    <span>YouTube</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+        // FAQ Accordion functionality
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', function() {
+                const faqItem = this.parentElement;
+                const isActive = faqItem.classList.contains('active');
+
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Form submission handling
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                // Remove this line to actually submit the form to Django
+                // e.preventDefault();
+
+                // Show success message
+                const successMsg = document.getElementById('successMessage');
+                if (successMsg) {
+                    successMsg.style.display = 'flex';
+
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        successMsg.style.display = 'none';
+                    }, 5000);
+                }
+            });
+        }
+
+        // Reset button
+        const resetBtn = document.querySelector('.reset-btn');
+        if (resetBtn) {
+            resetBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const form = document.getElementById('contactForm');
+                if (form) {
+                    form.reset();
+
+                    // Hide success message if visible
+                    const successMsg = document.getElementById('successMessage');
+                    if (successMsg) {
+                        successMsg.style.display = 'none';
+                    }
+                }
+            });
+        }
+    });
+</script>
+
+
+    {% endblock body %}

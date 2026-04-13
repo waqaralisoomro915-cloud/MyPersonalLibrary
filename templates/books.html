@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+ <!-- Featured Books Section -->
+    <section id="books" class="featured-books">
+        <link rel="stylesheet" href="{% static 'books.css'%}">
+        <h2 class="section-title">Books</h2>
+        <div class="books-grid">
+            <div class="book-card">
+                <div class="book-cover">
+                    <img src="https://i.ytimg.com/vi/SKuEIqYo0aA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBiv1AtyflntW3_HhnnZn-0J9P78w" alt="Book Cover">
+
+                </div>
+                <div class="book-info">
+                    <h3>The Silent Patient</h3>
+                    <p class="author">Alex Michaelides</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="book-description">A woman's act of violence against her husband...</p>
+                </div>
+            </div>
+
+            <div class="book-card">
+                <div class="book-cover">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRffPzAScWEhlxWdTJQp-ncy3ULH9J8PgMHvw&s" alt="Book Cover">
+
+                </div>
+                <div class="book-info">
+                    <h3>Dune</h3>
+                    <p class="author">Frank Herbert</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="book-description">A mythic and emotionally charged hero's journey...</p>
+                </div>
+            </div>
+
+            <div class="book-card">
+                <div class="book-cover">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIr2cO_tu4s8WVEQ8vnNomjQUNyBhBnN0ieg&s" alt="Book Cover">
+
+                </div>
+                <div class="book-info">
+                    <h3>Becoming</h3>
+                    <p class="author">Michelle Obama</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="book-description">An intimate, powerful, and inspiring memoir...</p>
+                </div>
+            </div>
+
+            <div class="book-card">
+                <div class="book-cover">
+                    <img src="https://m.media-amazon.com/images/M/MV5BNTkwNzJiYTctNzI3NC00NjE1LTlhYjktY2Q5MTdmMWFmNzcxXkEyXkFqcGc@._V1_.jpg" alt="Book Cover">
+
+                </div>
+                <div class="book-info">
+                    <h3>Project Hail Mary</h3>
+                    <p class="author">Andy Weir</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="book-description">A lone astronaut must save humanity from extinction...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock body %}

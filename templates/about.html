@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+  <!-- About Section -->
+ <link rel="stylesheet" href="{% static 'about.css' %}">
+
+    <section id="about" class="about">
+        <div class="about-container">
+            <div class="about-content">
+                <h2>About My Library</h2>
+                <p>
+                    Welcome to my personal digital library, a space where I discover, organize, and track my reading journey. This library allows me to keep a record of the books I’ve read, the ones I’m currently reading, and the titles I plan to explore in the future. Each book in this collection represents knowledge, ideas, and stories that have contributed to my growth as a reader.
+
+The library is organized into different categories to make it easy to browse and explore books based on interests. I also add personal notes and ratings to remember what I learned or enjoyed about each book.
+
+You can explore books from my reading list and discover new titles across different genres. If you have a book recommendation, feel free to suggest it through the contact form,  I’m always excited to discover new books and expand my reading journey.
+
+                </p>
+                <div class="about-features">
+                    <div class="feature">
+                        <i class="fas fa-bookmark"></i>
+                        <span>Personal notes on every book</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-star"></i>
+                        <span>Custom rating system</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-tags"></i>
+                        <span>Organized by genres and themes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock body %}

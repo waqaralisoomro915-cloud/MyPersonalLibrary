@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+  <h2 class="section-title">Browse Categories</h2>
+<link rel="stylesheet" href="{% static 'categories.css'%}">
+        <div class="categories-grid">
+            <div class="category-card">
+                <i class="fas fa-robot"></i>
+                <h3>Science Fiction</h3>
+                <p>45 books</p>
+            </div>
+            <div class="category-card">
+                <i class="fas fa-heart"></i>
+                <h3>Romance</h3>
+                <p>32 books</p>
+            </div>
+            <div class="category-card">
+                <i class="fas fa-skull"></i>
+                <h3>Mystery</h3>
+                <p>28 books</p>
+            </div>
+            <div class="category-card">
+                <i class="fas fa-flask"></i>
+                <h3>Science</h3>
+                <p>23 books</p>
+            </div>
+            <div class="category-card">
+                <i class="fas fa-landmark"></i>
+                <h3>History</h3>
+                <p>31 books</p>
+            </div>
+            <div class="category-card">
+                <i class="fas fa-child"></i>
+                <h3>Children's</h3>
+                <p>19 books</p>
+            </div>
+        </div>
+    </section>
+{% endblock body %}

@@ -1,0 +1,246 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal</title>
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- ==================== HEADER SECTION ==================== -->
+    <header class="header">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-bar-content">
+                    <div class="contact-info">
+                        <span><i class="fas fa-phone"></i> +92 3147152961</span>
+                        <span><i class="fas fa-envelope"></i> waqaralisoomro915@gmail.com</span>
+                        <span><i class="fas fa-clock"></i> Mon-Fri: 9AM - 8PM</span>
+                    </div>
+                    <div class="user-actions">
+                        <a href="#"><i class="fas fa-user"></i> Login</a>
+                        <a href="#"><i class="fas fa-user-plus"></i> Register</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-container">
+                    <!-- Logo -->
+                    <div class="nav-logo">
+                        <a href="{% url 'home'%}">
+                            <i class="fas fa-book-open"></i>
+                            <span>MyLibrary</span>
+                        </a>
+                    </div>
+
+                    <!-- Mobile Menu Toggle -->
+                    <div class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
+
+                    <!-- Navigation Menu -->
+                    <ul class="nav-menu" id="navMenu">
+                    <ul class="nav-menu" id="navMenu">
+
+<li>
+<a href="{% url 'home' %}"
+class="{% if request.resolver_match.url_name == 'home' %}active{% endif %}">
+Home
+</a>
+</li>
+
+<li>
+<a href="{% url 'books' %}"
+class="{% if request.resolver_match.url_name == 'books' %}active{% endif %}">
+Books
+</a>
+</li>
+
+<li>
+<a href="{% url 'categories' %}"
+class="{% if request.resolver_match.url_name == 'categories' %}active{% endif %}">
+Categories
+</a>
+</li>
+
+<li>
+<a href="{% url 'arivals' %}"
+class="{% if request.resolver_match.url_name == 'arivals' %}active{% endif %}">
+New Arrivals
+</a>
+</li>
+
+<li>
+<a href="{% url 'about' %}"
+class="{% if request.resolver_match.url_name == 'about' %}active{% endif %}">
+About
+</a>
+</li>
+
+<li>
+<a href="{% url 'contact' %}"
+class="{% if request.resolver_match.url_name == 'contact' %}active{% endif %}">
+Contact
+</a>
+</li>
+
+<li>
+<a href="{% url 'favourites' %}"
+class="{% if request.resolver_match.url_name == 'favourites' %}active{% endif %}">
+Favourite
+</a>
+</li>
+
+</ul>
+                    </ul>
+
+                    <!-- Search and Icons -->
+                    <div class="nav-icons">
+                        <div class="search-box" id="searchBox">
+                            <input type="text" placeholder="Search books...">
+                            <button><i class="fas fa-search"></i></button>
+                        </div>
+                        <div class="icon-buttons">
+                            <a href="#" class="icon-link" id="searchToggle">
+                                <i class="fas fa-search"></i>
+                            </a>
+                            <a href="#" class="icon-link">
+                                <i class="fas fa-heart"></i>
+                                <span class="badge">3</span>
+                            </a>
+                            <a href="#" class="icon-link">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="badge">2</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Breadcrumb -->
+
+    </header>
+
+    <main>
+        {% block body %}
+        {% endblock body %}
+
+
+    </main>
+
+    <!-- ==================== FOOTER SECTION ==================== -->
+    <footer class="footer">
+        <!-- Newsletter Section -->
+
+        <!-- Main Footer -->
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <!-- About Section -->
+                    <div class="footer-col">
+                        <div class="footer-logo">
+                            <i class="fas fa-book-open"></i>
+                            <span>MyLibrary</span>
+                        </div>
+                        <p class="footer-description">
+                            Welcome to my personal digital library, a place where I discover, track, and share my reading journey
+                        </p>
+                        <div class="social-links">
+                            <a href="#" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link" title="Goodreads"><i class="fab fa-goodreads-g"></i></a>
+                            <a href="#" class="social-link" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="footer-col">
+                        <h4>Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="{% url 'home'%}"><i class="fas fa-chevron-right"></i> Home</a></li>
+                            <li><a href="{% url 'books'%}"><i class="fas fa-chevron-right"></i> Books</a></li>
+                            <li><a href="{% url 'categories'%}"><i class="fas fa-chevron-right"></i> Categories</a></li>
+                            <li><a href="{% url 'arivals'%}"><i class="fas fa-chevron-right"></i> New Arrivals</a></li>
+                            <li><a href="{% url 'about'%}"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                            <li><a href="{% url 'contact'%}"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Categories -->
+                    <div class="footer-col">
+                        <h4>Popular Categories</h4>
+                        <ul class="footer-links">
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Fiction</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Mystery & Thriller</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Science Fiction</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Romance</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> Biography</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right"></i> History</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="footer-col">
+                        <h4>Contact Us</h4>
+                        <ul class="contact-info">
+                            <li><i class="fas fa-map-marker-alt"></i> ALLAM II QAZI LIBRARY, DADU City, BC 12345</li>
+                            <li><i class="fas fa-phone"></i> +92 (314) 7152961</li>
+                            <li><i class="fas fa-envelope"></i> waqaralisoomro915@gmail.com</li>
+                            <li><i class="fas fa-clock"></i> Mon - Fri: 9:00 AM - 8:00 PM</li>
+                            <li><i class="fas fa-clock"></i> Sat - Sun: 10:00 AM - 6:00 PM</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2026 My Personal Library. All rights reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="{% url 'privacy'%}">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                        <a href="#">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactive Elements -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+
+        // Search toggle for mobile
+        document.getElementById('searchToggle').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('searchBox').classList.toggle('active');
+        });
+
+        // Sticky header on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.classList.add('sticky');
+            } else {
+                header.classList.remove('sticky');
+            }
+        });
+    </script>
+</body>
+</html>
